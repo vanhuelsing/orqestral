@@ -11,7 +11,7 @@ export const content = {
     },
     hero: {
       badge: "KI-Agenten Architekten",
-      title: "Orches-tral",
+      title: "orqestral",
       subtitle:
         "Agenten orchestrieren. Workflows steuern. Skills bauen. Komplexe AI-Systeme zum Laufen bringen.",
       cta: "Projekt besprechen",
@@ -100,7 +100,7 @@ export const content = {
     },
     hero: {
       badge: "AI Agent Architects",
-      title: "Orches-tral",
+      title: "orqestral",
       subtitle:
         "Orchestrating agents. Controlling workflows. Building skills. Getting complex AI systems running.",
       cta: "Discuss Project",

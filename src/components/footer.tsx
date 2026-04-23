@@ -14,10 +14,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-6">
-            <span className="font-mono text-lg font-semibold tracking-tight">
-              <span className="text-indigo-500">Orches</span>
-              <span className="text-zinc-100">tral</span>
-            </span>
+            <img src="/logo.png" alt="orqestral" className="h-6 object-contain" />
           </div>
 
           {/* Links */}

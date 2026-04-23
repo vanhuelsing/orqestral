@@ -36,9 +36,8 @@ export function Navigation() {
       >
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="font-mono text-xl font-semibold tracking-tight">
-            <span className="text-indigo-500">Orches</span>
-            <span className="text-zinc-100">tral</span>
+          <a href="#" className="flex items-center">
+            <img src="/logo.png" alt="orqestral" className="h-7 object-contain" />
           </a>
 
           {/* Desktop Nav */}
@@ -93,10 +92,7 @@ export function Navigation() {
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xl font-semibold tracking-tight">
-                  <span className="text-indigo-500">Orches</span>
-                  <span className="text-zinc-100">tral</span>
-                </span>
+                <img src="/logo.png" alt="orqestral" className="h-7 object-contain" />
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="p-2 text-zinc-400 hover:text-zinc-100"
