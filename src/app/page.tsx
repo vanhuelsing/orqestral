@@ -1,1 +1,10 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Orqestral — Coming Soon</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{margin:0;padding:0;box-sizing:border-box}body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#09090B;color:#fff;font-family:Inter,system-ui,sans-serif;text-align:center;padding:24px}h1{font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;margin-bottom:16px}p{font-size:1.125rem;color:#a1a1aa;max-width:480px;line-height:1.6}</style></head><body><div><h1>Orqestral</h1><p>Coming Soon</p></div></body></html>
+export default function Home() {
+  return (
+    <main className="min-h-screen flex items-center justify-center bg-zinc-950">
+      <div className="text-center">
+        <h1 className="text-5xl font-bold text-white mb-4">Orqestral</h1>
+        <p className="text-xl text-zinc-400">Coming Soon</p>
+      </div>
+    </main>
+  );
+}
