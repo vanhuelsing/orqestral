@@ -84,7 +84,7 @@ export const content = {
       button: "Projekt besprechen",
     },
     footer: {
-      rights: "© 2026 Orqestral. Alle Rechte vorbehalten.",
+      rights: "© 2026 orqestral. Alle Rechte vorbehalten.",
       impressum: "Impressum",
       privacy: "Datenschutz",
       switchTo: "EN",
@@ -173,7 +173,7 @@ export const content = {
       button: "Discuss Project",
     },
     footer: {
-      rights: "© 2026 Orqestral. All rights reserved.",
+      rights: "© 2026 orqestral. All rights reserved.",
       impressum: "Imprint",
       privacy: "Privacy",
       switchTo: "DE",

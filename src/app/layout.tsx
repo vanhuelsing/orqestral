@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Orqestral — Die Architekten für KI-Agenten",
+  title: "orqestral — Die Architekten für KI-Agenten",
   description:
     "Wir entwickeln spezialisierte KI-Agenten für KMUs und Selbstständige. Skills bauen, Agenten orchestrieren, Workflows steuern.",
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Deutschland",
   ],
   openGraph: {
-    title: "Orqestral — KI-Agenten Architekten",
+    title: "orqestral — KI-Agenten Architekten",
     description:
       "Wir entwickeln spezialisierte KI-Agenten für KMUs und Selbstständige.",
     locale: "de_DE",
