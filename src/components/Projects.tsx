@@ -1,22 +1,28 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Settings2, Split, Bot, ArrowRight } from "lucide-react";
+import { GraduationCap, Mic, Sparkles } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/i18n";
 
 const icons = {
-  card1: Settings2,
-  card2: Split,
-  card3: Bot,
+  project1: GraduationCap,
+  project2: Mic,
+  project3: Sparkles,
 };
 
-export function Services() {
+const urls = {
+  project1: "https://agentlabs.academy",
+  project2: "https://heyfranz.ai",
+  project3: "https://agentdeals.io",
+};
+
+export function Projects() {
   const { lang } = useLanguage();
   const t = content[lang];
   const prefersReducedMotion = useReducedMotion();
 
-  const cards = [t.services.card1, t.services.card2, t.services.card3];
+  const projects = [t.projects.project1, t.projects.project2, t.projects.project3];
 
   const container = {
     hidden: {},
@@ -31,7 +37,7 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="py-20 px-6">
+    <section id="projects" className="py-20 px-6 bg-zinc-900/30">
       <div className="max-w-6xl mx-auto">
         {/* Badge */}
         <motion.div
@@ -42,7 +48,7 @@ export function Services() {
           className="mb-4"
         >
           <span className="text-xs uppercase tracking-widest text-accent-soft font-mono">
-            {t.services.badge}
+            {t.projects.badge}
           </span>
         </motion.div>
 
@@ -54,10 +60,10 @@ export function Services() {
           transition={{ duration: 0.5, delay: 0.05 }}
           className="text-3xl md:text-5xl font-semibold text-zinc-50 mb-16 tracking-tight"
         >
-          {t.services.title}
+          {t.projects.title}
         </motion.h2>
 
-        {/* Cards */}
+        {/* Project Cards */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -65,17 +71,18 @@ export function Services() {
           viewport={{ once: true }}
           className="grid md:grid-cols-3 gap-8"
         >
-          {cards.map((card, i) => {
+          {projects.map((project, i) => {
             const Icon = Object.values(icons)[i];
+            const url = Object.values(urls)[i];
             return (
-              <motion.div
+              <motion.a
                 key={i}
                 variants={item}
-                className="group relative p-8 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block p-8 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
               >
-                {/* Subtle top gradient */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
-
                 {/* Icon */}
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
                   <Icon className="w-6 h-6 text-accent-soft" />
@@ -83,19 +90,19 @@ export function Services() {
 
                 {/* Title */}
                 <h3 className="text-xl font-semibold text-zinc-100 mb-3 tracking-tight">
-                  {card.title}
+                  {project.title}
                 </h3>
 
                 {/* Description */}
                 <p className="text-zinc-400 leading-relaxed mb-6">
-                  {card.description}
+                  {project.description}
                 </p>
 
-                {/* Arrow - appears on hover */}
-                <div className="flex items-center text-zinc-600 group-hover:text-accent-soft group-hover:translate-x-1 transition-all duration-200">
-                  <ArrowRight className="w-4 h-4" />
+                {/* Metric */}
+                <div className="flex items-center gap-2 text-sm text-accent-soft">
+                  <span>{project.metric}</span>
                 </div>
-              </motion.div>
+              </motion.a>
             );
           })}
         </motion.div>

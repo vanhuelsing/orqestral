@@ -19,9 +19,9 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "#skills", label: t.nav.skills },
-    { href: "#agents", label: t.nav.agents },
-    { href: "#workflows", label: t.nav.workflows },
+    { href: "#services", label: t.nav.services },
+    { href: "#who", label: t.nav.about },
+    { href: "#projects", label: "Projects" },
     { href: "#contact", label: t.nav.contact },
   ];
 
@@ -30,14 +30,18 @@ export function Navigation() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-zinc-950/90 backdrop-blur-md shadow-lg shadow-black/20"
+            ? "bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"
             : "bg-transparent"
         }`}
       >
-        <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <nav className="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img src="/logo.png" alt="orqestral" className="h-7 object-contain" />
+            <img
+              src="/logo.png"
+              alt="Orqestral"
+              className="h-8 object-contain"
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -46,38 +50,31 @@ export function Navigation() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+                  className="relative text-sm text-zinc-400 hover:text-zinc-100 transition-colors group"
                 >
                   {link.label}
+                  <span className="absolute -bottom-1 left-1/2 w-0 h-px bg-indigo-500 group-hover:w-full group-hover:left-0 transition-all duration-200" />
                 </a>
               </li>
             ))}
             <li>
               <button
                 onClick={toggleLang}
-                className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors uppercase tracking-wider"
+                className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors uppercase tracking-widest font-mono"
               >
-                {t.footer.switchTo}
+                {t.nav.switchTo}
               </button>
             </li>
           </ul>
 
-          {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-4">
-            <a
-              href="#contact"
-              className="hidden md:inline-flex h-9 px-4 items-center justify-center rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-colors"
-            >
-              {t.nav.cta}
-            </a>
-            <button
-              onClick={() => setMobileOpen(true)}
-              className="md:hidden p-2 text-zinc-400 hover:text-zinc-100"
-              aria-label="Open menu"
-            >
-              <Menu className="w-5 h-5" />
-            </button>
-          </div>
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setMobileOpen(true)}
+            className="md:hidden p-3 text-zinc-400 hover:text-zinc-100 transition-colors"
+            aria-label="Open menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
         </nav>
       </header>
 
@@ -85,49 +82,51 @@ export function Navigation() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-zinc-950 md:hidden"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed inset-0 z-[100] bg-zinc-900 md:hidden"
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex items-center justify-between">
-                <img src="/logo.png" alt="orqestral" className="h-7 object-contain" />
+                <img
+                  src="/logo.png"
+                  alt="Orqestral"
+                  className="h-8 object-contain"
+                />
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="p-2 text-zinc-400 hover:text-zinc-100"
+                  className="p-3 text-zinc-400 hover:text-zinc-100 transition-colors"
                   aria-label="Close menu"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
               <nav className="flex flex-col gap-6 mt-16">
-                {navLinks.map((link) => (
-                  <a
+                {navLinks.map((link, i) => (
+                  <motion.a
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
                     className="text-2xl text-zinc-300 hover:text-zinc-100 transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </motion.a>
                 ))}
-                <button
+                <motion.button
                   onClick={toggleLang}
-                  className="text-left text-lg text-zinc-500 hover:text-zinc-300 transition-colors uppercase tracking-wider mt-4"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.1 }}
+                  className="text-left text-lg text-zinc-500 hover:text-zinc-300 transition-colors uppercase tracking-widest mt-4 font-mono"
                 >
-                  {t.footer.switchTo}
-                </button>
+                  {t.nav.switchTo}
+                </motion.button>
               </nav>
-              <div className="mt-auto">
-                <a
-                  href="#contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="block w-full h-12 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg text-center leading-[48px]"
-                >
-                  {t.nav.cta}
-                </a>
-              </div>
             </div>
           </motion.div>
         )}

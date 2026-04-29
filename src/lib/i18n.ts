@@ -3,180 +3,232 @@ export type Language = "de" | "en";
 export const content = {
   de: {
     nav: {
-      skills: "Skills",
-      agents: "Agenten",
-      workflows: "Workflows",
+      home: "Home",
+      about: "Über uns",
+      services: "Services",
       contact: "Kontakt",
-      cta: "Projekt besprechen",
+      switchTo: "EN",
     },
     hero: {
-      badge: "KI-Agenten Architekten",
-      title: "orqestral",
-      subtitle:
-        "Agenten orchestrieren. Workflows steuern. Skills bauen. Komplexe AI-Systeme zum Laufen bringen.",
-      cta: "Projekt besprechen",
-      ctaSecondary: "Was wir bauen",
+      title: "KI, die für dich arbeitet",
+      titleLine2: "— ohne dass du programmieren",
+      titleLine3: "lernen musst.",
+      subtitle: "Orqestral baut AI-Lösungen für Menschen — nicht für Entwickler.",
+      cta: "Let's talk",
     },
     services: {
-      badge: "Was wir tun",
-      title: "Drei Disziplinen. Eine Expertise.",
-      skills: {
-        title: "Skills Bauen",
+      badge: "Services",
+      title: "Was wir tun",
+      card1: {
+        title: "Persönliche Automation",
         description:
-          "Spezialisierte KI-Komponenten für produktiven Einsatz. Wir entwickeln Agents mit den Fähigkeiten, die Ihr Unternehmen braucht.",
+          "Die lästigen Aufgaben, die du immer vor dir herschiebst — Termine, Erinnerungen, Einkäufe. Wir automatisieren sie.",
       },
-      agents: {
-        title: "Agenten Orchestrieren",
+      card2: {
+        title: "Komplexe Aufgaben vereinfacht",
         description:
-          "Multi-Agent Systeme mit klarer Kontrolle und Monitoring. Koordination komplexer AI-Workflows ohne Chaos.",
+          "Keine Aufgabe ist zu groß, wenn man sie in die richtigen Stücke teilt. Wir zerlegen das Komplizierte in Einfaches.",
       },
-      workflows: {
-        title: "Workflows Steuern",
+      card3: {
+        title: "Proaktive KI-Begleiter",
         description:
-          "Komplexe Prozesse automatisieren und skalieren. Von der ersten Automation bis zum Enterprise-Betrieb.",
+          "Nicht nur reagiert KI auf deine Anfragen — sie merkt, was du brauchst, bevor du es sagst.",
+      },
+    },
+    who: {
+      badge: "Die Menschen",
+      title: "Für wen ist das?",
+      card1: {
+        label: "Busy Parents",
+        quote:
+          "Ich habe keine Zeit für Administratives — aber es wächst und wächst.",
+      },
+      card2: {
+        label: "Kleinunternehmer",
+        quote:
+          "Ich bin gut in meinem Job, nicht in digitalen Tools.",
+      },
+      card3: {
+        label: "60+",
+        quote:
+          "Alles ist so kompliziert. Ich will einfach nur, dass etwas funktioniert.",
+      },
+      card4: {
+        label: "Info-Overload",
+        quote:
+          "Zu viele Apps, zu viele Abos, zu viele Passwörter. Ich will nicht mehr nachdenken müssen.",
       },
     },
     process: {
-      badge: "Unser Vorgehen",
-      title: "03 Schritte zur Lösung",
+      badge: "Der Prozess",
+      title: "So funktioniert's",
       step1: {
         number: "01",
-        title: "Architektur",
+        title: "Verstehen",
         description:
-          "Verstehen was gebraucht wird. Systemdesign mit klarer Struktur und messbaren Zielen.",
+          "Wir nehmen uns Zeit, zu lernen, wie du arbeitest und was du wirklich brauchst. Keine Standardlösungen.",
       },
       step2: {
         number: "02",
-        title: "Build",
+        title: "Bauen",
         description:
-          "Agenten bauen. Skills implementieren. Alles mit Tests und Monitoring von Anfang an.",
+          "Wir erstellen KI-Lösungen, die zu deinem Leben passen — nicht umgekehrt.",
       },
       step3: {
         number: "03",
-        title: "Orchestrierung",
+        title: "Besser leben",
         description:
-          "Alles zum Laufen bringen. Betreiben. Skalieren. Kontinuierliche Optimierung.",
+          "Du bekommst die Ergebnisse. Wir kümmern uns um die Komplexität.",
       },
     },
-    socialProof: {
-      badge: "Was wir gebaut haben",
-      title: "Systeme im Einsatz",
-      agentDeals: {
-        title: "AgentDeals Wishes",
-        description:
-          "Multi-Agent Wishlist Platform. Automatisierte Produktempfehlungen und Wishlist-Management.",
-      },
-      agentLabs: {
+    projects: {
+      badge: "Portfolio",
+      title: "Was wir gebaut haben",
+      project1: {
         title: "AgentLabs Academy",
         description:
-          "AI-Driven Academy Platform. Interaktive Lernpfade mit intelligenten Assistenten.",
+          "Eine KI-gesteuerte Online-Akademie, die Menschen beibringt, wie sie selbst KI-Agenten bauen können — ohne Vorwissen.",
+        metric: "Menschen haben gelernt, ihre eigene KI zu bauen",
       },
-      heyFranz: {
+      project2: {
         title: "HeyFranz",
         description:
-          "Voice-First AI Assistant. Natürliche Sprachinteraktion für alltägliche Aufgaben.",
+          "Ein KI-Assistent, der Franziskas Alltag erleichtert — von Terminen bis Erinnerungen, ohne dass sie eine App bedienen muss.",
+        metric: "Ein Alltag, der einfach funktioniert",
+      },
+      project3: {
+        title: "AgentDeals Wishes",
+        description:
+          "Ein KI-gesteuertes Tool, das AgentDeals-Nutzern hilft, ihre Produktwünsche zu verwalten — ohne Excel-Sheets.",
+        metric: "Wünsche, die nicht verloren gehen",
       },
     },
     cta: {
-      title: "Bauen wir was Sie brauchen.",
-      subtitle:
-        "Von der Idee zum laufenden System — wir begleiten Sie durch den gesamten Prozess.",
-      button: "Projekt besprechen",
+      title: "Bereit zu sehen, was KI",
+      titleLine2: "für dein Leben tun kann?",
+      cta: "Let's talk",
     },
     footer: {
-      rights: "© 2026 orqestral. Alle Rechte vorbehalten.",
       impressum: "Impressum",
-      privacy: "Datenschutz",
-      switchTo: "EN",
+      datenschutz: "Datenschutz",
+      contact: "Kontakt",
+      copyright: "© 2026 Orqestral UG (haftungsbeschränkt)",
+      address: "Lörracher Straße 13, 51107 Köln",
     },
   },
   en: {
     nav: {
-      skills: "Skills",
-      agents: "Agents",
-      workflows: "Workflows",
+      home: "Home",
+      about: "About",
+      services: "Services",
       contact: "Contact",
-      cta: "Discuss Project",
+      switchTo: "DE",
     },
     hero: {
-      badge: "AI Agent Architects",
-      title: "orqestral",
-      subtitle:
-        "Orchestrating agents. Controlling workflows. Building skills. Getting complex AI systems running.",
-      cta: "Discuss Project",
-      ctaSecondary: "What we build",
+      title: "AI that works for you",
+      titleLine2: "— without needing to learn",
+      titleLine3: "how to code.",
+      subtitle: "Orqestral builds AI solutions for people — not for developers.",
+      cta: "Let's talk",
     },
     services: {
-      badge: "What we do",
-      title: "Three disciplines. One expertise.",
-      skills: {
-        title: "Building Skills",
+      badge: "Services",
+      title: "What we do",
+      card1: {
+        title: "Personal Automation",
         description:
-          "Specialized AI components for production use. We develop agents with the capabilities your business needs.",
+          "The annoying tasks you keep putting off — appointments, reminders, shopping. We automate them.",
       },
-      agents: {
-        title: "Orchestrating Agents",
+      card2: {
+        title: "Complex Tasks Simplified",
         description:
-          "Multi-agent systems with clear control and monitoring. Coordinating complex AI workflows without chaos.",
+          "No task is too big when you break it into the right pieces. We turn complicated into simple.",
       },
-      workflows: {
-        title: "Controlling Workflows",
+      card3: {
+        title: "Proactive AI Companions",
         description:
-          "Automating and scaling complex processes. From first automation to enterprise operations.",
+          "AI doesn't just react to your requests — it notices what you need before you say it.",
+      },
+    },
+    who: {
+      badge: "The People",
+      title: "Who's it for?",
+      card1: {
+        label: "Busy Parents",
+        quote:
+          "I don't have time for admin work — but it's growing and growing.",
+      },
+      card2: {
+        label: "Small Business Owners",
+        quote:
+          "I'm good at my job, not at digital tools.",
+      },
+      card3: {
+        label: "60+",
+        quote:
+          "Everything is so complicated. I just want things to work.",
+      },
+      card4: {
+        label: "Info Overload",
+        quote:
+          "Too many apps, too many subscriptions, too many passwords. I don't want to think about it anymore.",
       },
     },
     process: {
-      badge: "Our Approach",
-      title: "03 Steps to Solution",
+      badge: "The Process",
+      title: "How it works",
       step1: {
         number: "01",
-        title: "Architecture",
+        title: "Understand",
         description:
-          "Understanding what's needed. System design with clear structure and measurable goals.",
+          "We take time to learn how you work and what you really need. No cookie-cutter solutions.",
       },
       step2: {
         number: "02",
         title: "Build",
         description:
-          "Building agents. Implementing skills. Everything with tests and monitoring from the start.",
+          "We create AI solutions that fit your life — not the other way around.",
       },
       step3: {
         number: "03",
-        title: "Orchestration",
+        title: "Better Life",
         description:
-          "Getting everything running. Operating. Scaling. Continuous optimization.",
+          "You get the results. We handle the complexity.",
       },
     },
-    socialProof: {
-      badge: "What we've built",
-      title: "Systems in Production",
-      agentDeals: {
-        title: "AgentDeals Wishes",
-        description:
-          "Multi-Agent Wishlist Platform. Automated product recommendations and wishlist management.",
-      },
-      agentLabs: {
+    projects: {
+      badge: "Portfolio",
+      title: "What we've built",
+      project1: {
         title: "AgentLabs Academy",
         description:
-          "AI-Driven Academy Platform. Interactive learning paths with intelligent assistants.",
+          "An AI-powered online academy that teaches people how to build their own AI agents — no prior knowledge needed.",
+        metric: "People learned to build their own AI",
       },
-      heyFranz: {
+      project2: {
         title: "HeyFranz",
         description:
-          "Voice-First AI Assistant. Natural language interaction for everyday tasks.",
+          "An AI assistant that makes Franziska's everyday life easier — from appointments to reminders, without her needing to use an app.",
+        metric: "An everyday life that just works",
+      },
+      project3: {
+        title: "AgentDeals Wishes",
+        description:
+          "An AI-powered tool that helps AgentDeals users manage their product wishes — no more Excel sheets.",
+        metric: "Wishes that don't get lost",
       },
     },
     cta: {
-      title: "Let's build what you need.",
-      subtitle:
-        "From idea to running system — we guide you through the entire process.",
-      button: "Discuss Project",
+      title: "Ready to see what AI",
+      titleLine2: "can do for your life?",
+      cta: "Let's talk",
     },
     footer: {
-      rights: "© 2026 orqestral. All rights reserved.",
       impressum: "Imprint",
-      privacy: "Privacy",
-      switchTo: "DE",
+      datenschutz: "Privacy",
+      contact: "Contact",
+      copyright: "© 2026 Orqestral UG (haftungsbeschränkt)",
+      address: "Lörracher Straße 13, 51107 Köln",
     },
   },
 };

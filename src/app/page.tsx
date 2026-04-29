@@ -1,17 +1,28 @@
+"use client";
+
+import { LanguageProvider } from "@/lib/language-context";
+import { Navigation } from "@/components/Navigation";
+import { Hero } from "@/components/Hero";
+import { Services } from "@/components/Services";
+import { Who } from "@/components/Who";
+import { HowItWorks } from "@/components/HowItWorks";
+import { Projects } from "@/components/Projects";
+import { CTA } from "@/components/CTA";
+import { Footer } from "@/components/Footer";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-zinc-950">
-      <div className="text-center max-w-xl px-6">
-        <h1 className="text-5xl font-bold text-white mb-4">orqestral</h1>
-        <p className="text-xl text-zinc-400 mb-8">Coming Soon</p>
-        <hr className="border-zinc-800 mb-8" />
-        <div className="text-left text-sm text-zinc-500 space-y-1">
-          <p><strong className="text-zinc-300">orqestral UG (haftungsbeschränkt)</strong></p>
-          <p>Geschäftsführer: Daniel Hülsmeyer</p>
-          <p>Lörracher Straße 13, 51107 Köln</p>
-          <p>Deutschland</p>
-        </div>
-      </div>
-    </main>
+    <LanguageProvider>
+      <main className="min-h-screen bg-zinc-950">
+        <Navigation />
+        <Hero />
+        <Services />
+        <Who />
+        <HowItWorks />
+        <Projects />
+        <CTA />
+        <Footer />
+      </main>
+    </LanguageProvider>
   );
 }

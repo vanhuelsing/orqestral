@@ -15,21 +15,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "orqestral — Die Architekten für KI-Agenten",
+  title: "Orqestral — KI, die für dich arbeitet",
   description:
-    "Wir entwickeln spezialisierte KI-Agenten für KMUs und Selbstständige. Skills bauen, Agenten orchestrieren, Workflows steuern.",
+    "Orqestral baut AI-Lösungen für Menschen — nicht für Entwickler. Persönliche Automation, komplexe Aufgaben vereinfacht, proaktive KI-Begleiter.",
   keywords: [
-    "KI Beratung",
-    "KI-Agenten",
-    "AI Consulting",
-    "KMU Digitalisierung",
+    "KI",
+    "AI",
     "Automation",
+    "Persönliche Assistenz",
     "Deutschland",
+    "Köln",
   ],
   openGraph: {
-    title: "orqestral — KI-Agenten Architekten",
+    title: "Orqestral — KI, die für dich arbeitet",
     description:
-      "Wir entwickeln spezialisierte KI-Agenten für KMUs und Selbstständige.",
+      "Orqestral baut AI-Lösungen für Menschen — nicht für Entwickler.",
     locale: "de_DE",
     type: "website",
   },
@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased">{children}</body>
+      <body className="min-h-screen antialiased">{children}</body>
     </html>
   );
 }

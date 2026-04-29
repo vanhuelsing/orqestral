@@ -1,97 +1,98 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/i18n";
 
 export function Hero() {
   const { lang } = useLanguage();
   const t = content[lang];
+  const prefersReducedMotion = useReducedMotion();
+
+  const stagger = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: prefersReducedMotion ? 0 : 0.15 },
+    },
+  };
+
+  const item = {
+    hidden: prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } },
+  };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-16">
-      {/* Background grid pattern */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 overflow-hidden">
+      {/* Ambient background glow */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent)",
+        }}
+      />
+
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, #fafafa 1px, transparent 0)`,
           backgroundSize: "40px 40px",
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8"
-        >
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-sm font-mono">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
-            {t.hero.badge}
-          </span>
-        </motion.div>
-
+      <motion.div
+        variants={stagger}
+        initial="hidden"
+        animate="show"
+        className="relative z-10 max-w-4xl mx-auto text-center"
+      >
         {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
-        >
-          <span className="text-zinc-100">{t.hero.title}</span>
-        </motion.h1>
+        <motion.div variants={item}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-50 leading-[1.1] mb-4">
+            {t.hero.title}
+          </h1>
+          <p className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-50 leading-[1.1] mb-8">
+            {t.hero.titleLine2}
+          </p>
+          <p className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-accent-soft leading-[1.1]">
+            {t.hero.titleLine3}
+          </p>
+        </motion.div>
 
         {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-10"
+          variants={item}
+          transition={{ delay: 0.05 }}
+          className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mt-8 mb-12"
         >
           {t.hero.subtitle}
         </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        {/* CTA */}
+        <motion.div variants={item} transition={{ delay: 0.1 }}>
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 h-12 px-6 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all duration-200 shadow-lg shadow-indigo-500/25"
+            className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-accent hover:bg-accent-hover text-white font-medium transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-500/25"
           >
             {t.hero.cta}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="#skills"
-            className="inline-flex items-center gap-2 h-12 px-6 rounded-lg border border-zinc-700 hover:border-zinc-600 text-zinc-300 hover:text-zinc-100 font-medium transition-all duration-200"
-          >
-            {t.hero.ctaSecondary}
           </a>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <a
-          href="#skills"
-          className="flex flex-col items-center gap-2 text-zinc-500 hover:text-zinc-300 transition-colors"
+      {!prefersReducedMotion && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <ChevronDown className="w-4 h-4 animate-bounce" />
-        </a>
-      </motion.div>
+          <div className="flex flex-col items-center gap-2 text-zinc-600">
+            <div className="w-px h-12 bg-gradient-to-b from-transparent to-zinc-700" />
+          </div>
+        </motion.div>
+      )}
     </section>
   );
 }

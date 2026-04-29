@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/i18n";
 
@@ -16,25 +15,30 @@ export function CTA() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative rounded-3xl bg-zinc-900 border border-zinc-800 p-12 md:p-16 text-center overflow-hidden"
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="relative rounded-3xl bg-zinc-900 border border-zinc-800 p-12 md:p-20 text-center overflow-hidden"
         >
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 via-transparent to-indigo-600/5" />
+          {/* Subtle background glow */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 40% at 50% 100%, rgba(99, 102, 241, 0.1), transparent)",
+            }}
+          />
 
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-100 mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-zinc-50 mb-4 tracking-tight leading-[1.1]">
               {t.cta.title}
             </h2>
-            <p className="text-lg text-zinc-400 mb-10 max-w-xl mx-auto">
-              {t.cta.subtitle}
+            <p className="text-2xl md:text-4xl lg:text-5xl font-bold text-zinc-50 mb-12 tracking-tight leading-[1.1]">
+              {t.cta.titleLine2}
             </p>
             <a
               href="mailto:hello@orqestral.ai"
-              className="group inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all duration-200 shadow-lg shadow-indigo-500/25"
+              className="inline-flex items-center justify-center h-14 px-10 rounded-lg bg-accent hover:bg-accent-hover text-white font-medium transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-500/25"
             >
-              {t.cta.button}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              {t.cta.cta}
             </a>
           </div>
         </motion.div>
