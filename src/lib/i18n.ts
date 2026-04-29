@@ -10,102 +10,120 @@ export const content = {
       switchTo: "EN",
     },
     hero: {
-      title: "KI, die für dich arbeitet",
-      titleLine2: "— ohne dass du programmieren",
-      titleLine3: "lernen musst.",
-      subtitle: "Orqestral baut AI-Lösungen für Menschen — nicht für Entwickler.",
+      headline: "KI, die Menschen verbindet",
+      headlineEmphasis: "— statt sie zu ersetzen.",
+      subheadline:
+        "Das Problem kennt jeder. Die Lösung dafür hat noch niemand gut gebaut.",
       cta: "Let's talk",
     },
-    services: {
-      badge: "Services",
-      title: "Was wir tun",
+    problem: {
+      badge: "Die Situation",
+      title: "Warum das jetzt zählt",
       card1: {
-        title: "Persönliche Automation",
+        stat: "1,8 Mio.",
         description:
-          "Die lästigen Aufgaben, die du immer vor dir herschiebst — Termine, Erinnerungen, Einkäufe. Wir automatisieren sie.",
+          "Menschen in Deutschland leben mit einer Demenzdiagnose. Die Zahl steigt.",
       },
       card2: {
-        title: "Komplexe Aufgaben vereinfacht",
+        stat: "Epidemie",
         description:
-          "Keine Aufgabe ist zu groß, wenn man sie in die richtigen Stücke teilt. Wir zerlegen das Komplizierte in Einfaches.",
+          "Einsamkeit ist laut WHO ein wachsender Gesundheitsnotstand. Nicht nur ältere Menschen — aber besonders.",
       },
       card3: {
-        title: "Proaktive KI-Begleiter",
+        stat: "Fachkräftemangel",
         description:
-          "Nicht nur reagiert KI auf deine Anfragen — sie merkt, was du brauchst, bevor du es sagst.",
+          "Immer mehr Menschen brauchen Pflege. Immer weniger Menschen können sie geben.",
       },
     },
-    who: {
-      badge: "Die Menschen",
-      title: "Für wen ist das?",
+    solution: {
+      badge: "Die Lösung",
+      title: "Was Orqestral baut",
+      tagline: "KI, die zuhört. KI, die erinnert. KI, die hilft.",
       card1: {
-        label: "Busy Parents",
-        quote:
-          "Ich habe keine Zeit für Administratives — aber es wächst und wächst.",
+        title: "KI, die zuhört",
+        description:
+          "Gespräche verstehen, Kontext erkennen, wissen was gemeint ist — auch wenn man's nicht ausdrücken kann.",
       },
       card2: {
-        label: "Kleinunternehmer",
-        quote:
-          "Ich bin gut in meinem Job, nicht in digitalen Tools.",
+        title: "KI, die erinnert",
+        description:
+          "Frühere Gespräche, liebgewonnene Gewohnheiten, wichtige Termine. Nicht nur speichern — wissen, was zählt.",
       },
       card3: {
-        label: "60+",
-        quote:
-          "Alles ist so kompliziert. Ich will einfach nur, dass etwas funktioniert.",
-      },
-      card4: {
-        label: "Info-Overload",
-        quote:
-          "Zu viele Apps, zu viele Abos, zu viele Passwörter. Ich will nicht mehr nachdenken müssen.",
+        title: "KI, die hilft",
+        description:
+          "Nicht nur auf Anfragen reagieren — merken, was gebraucht wird. Und handeln, bevor man fragt.",
       },
     },
-    process: {
+    how: {
       badge: "Der Prozess",
-      title: "So funktioniert's",
+      title: "Wie wir das angehen",
+      intro:
+        "Wir machen das nicht allein. Wir arbeiten mit den Menschen, die es verstehen.",
       step1: {
         number: "01",
         title: "Verstehen",
         description:
-          "Wir nehmen uns Zeit, zu lernen, wie du arbeitest und was du wirklich brauchst. Keine Standardlösungen.",
+          "Wir lernen die Menschen kennen, die wir unterstützen wollen. Ihre Situation, ihre Bedürfnisse, ihre Würde.",
       },
       step2: {
         number: "02",
         title: "Bauen",
         description:
-          "Wir erstellen KI-Lösungen, die zu deinem Leben passen — nicht umgekehrt.",
+          "Wir entwickeln KI-Lösungen, die wirklich helfen — nicht theoretisch cool sind, sondern praktisch funktionieren.",
       },
       step3: {
         number: "03",
         title: "Besser leben",
         description:
-          "Du bekommst die Ergebnisse. Wir kümmern uns um die Komplexität.",
+          "Die Menschen, für die wir bauen, leben länger selbstständig. Mit weniger Angst. Mit mehr Leben.",
       },
     },
     projects: {
-      badge: "Portfolio",
-      title: "Was wir gebaut haben",
+      badge: "Traction",
+      title: "Was wir bereits gebaut haben",
+      intro:
+        "Drei Projekte, die zeigen: Wir können umsetzen. Für Menschen, die es wirklich brauchen.",
       project1: {
         title: "AgentLabs Academy",
         description:
-          "Eine KI-gesteuerte Online-Akademie, die Menschen beibringt, wie sie selbst KI-Agenten bauen können — ohne Vorwissen.",
-        metric: "Menschen haben gelernt, ihre eigene KI zu bauen",
+          "Eine Online-Akademie, die Menschen beibringt, eigene KI-Agenten zu bauen — ohne Vorwissen. Der Beweis, dass KI zugänglich sein kann.",
+        metric: "Hunderte Menschen haben gelernt, ihre eigene KI zu bauen",
       },
       project2: {
         title: "HeyFranz",
         description:
-          "Ein KI-Assistent, der Franziskas Alltag erleichtert — von Terminen bis Erinnerungen, ohne dass sie eine App bedienen muss.",
+          "Ein KI-Assistent, der Franziskas Alltag erleichtert — von Terminen bis Erinnerungen. Keine App, kein Interface. Einfach funktioniert.",
         metric: "Ein Alltag, der einfach funktioniert",
       },
       project3: {
         title: "AgentDeals Wishes",
         description:
-          "Ein KI-gesteuertes Tool, das AgentDeals-Nutzern hilft, ihre Produktwünsche zu verwalten — ohne Excel-Sheets.",
+          "Ein Tool, das AgentDeals-Nutzern hilft, ihre Produktwünsche zu verwalten — ohne Excel-Sheets. Einfache Wünsche, einfache Lösung.",
         metric: "Wünsche, die nicht verloren gehen",
       },
     },
+    why: {
+      badge: "Das Team",
+      title: "Warum Orqestral",
+      quote: "Wir bauen das, weil wir es verstehen.",
+      quoteSub:
+        "Nicht weil wir KI-Fans sind. Sondern weil wir die Menschen kennen, die es brauchen.",
+      team1: {
+        role: "Gründer & CEO",
+      },
+      team2: {
+        role: "CTO",
+      },
+      team3: {
+        role: "Product",
+      },
+    },
     cta: {
-      title: "Bereit zu sehen, was KI",
-      titleLine2: "für dein Leben tun kann?",
+      headline: "Für ein Leben mit Würde.",
+      headlineEmphasis: "Nicht allein.",
+      subheadline:
+        "Interessiert an einer Zusammenarbeit? Lass uns reden.",
       cta: "Let's talk",
     },
     footer: {
@@ -125,102 +143,119 @@ export const content = {
       switchTo: "DE",
     },
     hero: {
-      title: "AI that works for you",
-      titleLine2: "— without needing to learn",
-      titleLine3: "how to code.",
-      subtitle: "Orqestral builds AI solutions for people — not for developers.",
+      headline: "AI that connects people",
+      headlineEmphasis: "— not replaces them.",
+      subheadline:
+        "Everyone knows the problem. No one has built a good solution yet.",
       cta: "Let's talk",
     },
-    services: {
-      badge: "Services",
-      title: "What we do",
+    problem: {
+      badge: "The Situation",
+      title: "Why It Matters Now",
       card1: {
-        title: "Personal Automation",
+        stat: "1.8M",
         description:
-          "The annoying tasks you keep putting off — appointments, reminders, shopping. We automate them.",
+          "People in Germany live with a dementia diagnosis. The number is rising.",
       },
       card2: {
-        title: "Complex Tasks Simplified",
+        stat: "Epidemic",
         description:
-          "No task is too big when you break it into the right pieces. We turn complicated into simple.",
+          "Loneliness is a growing health crisis according to the WHO. Not just older people — but especially.",
       },
       card3: {
-        title: "Proactive AI Companions",
+        stat: "Care Shortage",
         description:
-          "AI doesn't just react to your requests — it notices what you need before you say it.",
+          "More and more people need care. Fewer and fewer people can provide it.",
       },
     },
-    who: {
-      badge: "The People",
-      title: "Who's it for?",
+    solution: {
+      badge: "The Solution",
+      title: "What Orqestral Builds",
+      tagline: "AI that listens. AI that remembers. AI that helps.",
       card1: {
-        label: "Busy Parents",
-        quote:
-          "I don't have time for admin work — but it's growing and growing.",
+        title: "AI That Listens",
+        description:
+          "Understanding conversations, recognizing context, knowing what is meant — even when it can't be expressed.",
       },
       card2: {
-        label: "Small Business Owners",
-        quote:
-          "I'm good at my job, not at digital tools.",
+        title: "AI That Remembers",
+        description:
+          "Past conversations, cherished habits, important appointments. Not just storing — knowing what matters.",
       },
       card3: {
-        label: "60+",
-        quote:
-          "Everything is so complicated. I just want things to work.",
-      },
-      card4: {
-        label: "Info Overload",
-        quote:
-          "Too many apps, too many subscriptions, too many passwords. I don't want to think about it anymore.",
+        title: "AI That Helps",
+        description:
+          "Not just reacting to requests — noticing what's needed. And acting before being asked.",
       },
     },
-    process: {
+    how: {
       badge: "The Process",
-      title: "How it works",
+      title: "How We Approach It",
+      intro:
+        "We don't do this alone. We work with the people who understand it.",
       step1: {
         number: "01",
         title: "Understand",
         description:
-          "We take time to learn how you work and what you really need. No cookie-cutter solutions.",
+          "We get to know the people we want to support. Their situation, their needs, their dignity.",
       },
       step2: {
         number: "02",
         title: "Build",
         description:
-          "We create AI solutions that fit your life — not the other way around.",
+          "We develop AI solutions that actually help — not theoretically cool, but practically working.",
       },
       step3: {
         number: "03",
-        title: "Better Life",
+        title: "Better Living",
         description:
-          "You get the results. We handle the complexity.",
+          "The people we build for live more independently. With less fear. With more life.",
       },
     },
     projects: {
-      badge: "Portfolio",
-      title: "What we've built",
+      badge: "Traction",
+      title: "What We've Already Built",
+      intro:
+        "Three projects that show: we can execute. For people who really need it.",
       project1: {
         title: "AgentLabs Academy",
         description:
-          "An AI-powered online academy that teaches people how to build their own AI agents — no prior knowledge needed.",
-        metric: "People learned to build their own AI",
+          "An online academy that teaches people to build their own AI agents — no prior knowledge needed. Proof that AI can be accessible.",
+        metric: "Hundreds of people learned to build their own AI",
       },
       project2: {
         title: "HeyFranz",
         description:
-          "An AI assistant that makes Franziska's everyday life easier — from appointments to reminders, without her needing to use an app.",
+          "An AI assistant that makes Franziska's everyday life easier — from appointments to reminders. No app, no interface. Just works.",
         metric: "An everyday life that just works",
       },
       project3: {
         title: "AgentDeals Wishes",
         description:
-          "An AI-powered tool that helps AgentDeals users manage their product wishes — no more Excel sheets.",
+          "A tool that helps AgentDeals users manage their product wishes — no more Excel sheets. Simple wishes, simple solution.",
         metric: "Wishes that don't get lost",
       },
     },
+    why: {
+      badge: "The Team",
+      title: "Why Orqestral",
+      quote: "We build this because we understand it.",
+      quoteSub:
+        "Not because we're AI fans. But because we know the people who need it.",
+      team1: {
+        role: "Founder & CEO",
+      },
+      team2: {
+        role: "CTO",
+      },
+      team3: {
+        role: "Product",
+      },
+    },
     cta: {
-      title: "Ready to see what AI",
-      titleLine2: "can do for your life?",
+      headline: "For a life with dignity.",
+      headlineEmphasis: "Not alone.",
+      subheadline: "Interested in working together? Let's talk.",
       cta: "Let's talk",
     },
     footer: {

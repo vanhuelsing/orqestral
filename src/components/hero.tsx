@@ -23,21 +23,12 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 overflow-hidden">
-      {/* Ambient background glow */}
+      {/* Ambient background glow — warmer, quieter */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent)",
-        }}
-      />
-
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #fafafa 1px, transparent 0)`,
-          backgroundSize: "40px 40px",
+            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(129, 140, 248, 0.10), transparent)",
         }}
       />
 
@@ -48,25 +39,20 @@ export function Hero() {
         className="relative z-10 max-w-4xl mx-auto text-center"
       >
         {/* Headline */}
-        <motion.div variants={item}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-50 leading-[1.1] mb-4">
-            {t.hero.title}
-          </h1>
-          <p className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-50 leading-[1.1] mb-8">
-            {t.hero.titleLine2}
-          </p>
-          <p className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-accent-soft leading-[1.1]">
-            {t.hero.titleLine3}
-          </p>
-        </motion.div>
+        <motion.h1 variants={item} className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-50 leading-[1.1] mb-4">
+          {t.hero.headline}
+        </motion.h1>
+        <motion.p variants={item} className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-accent-soft leading-[1.1] mb-10">
+          {t.hero.headlineEmphasis}
+        </motion.p>
 
-        {/* Subtitle */}
+        {/* Subheadline */}
         <motion.p
           variants={item}
           transition={{ delay: 0.05 }}
           className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mt-8 mb-12"
         >
-          {t.hero.subtitle}
+          {t.hero.subheadline}
         </motion.p>
 
         {/* CTA */}

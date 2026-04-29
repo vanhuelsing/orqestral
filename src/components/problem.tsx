@@ -1,22 +1,22 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Settings2, Split, Bot, ArrowRight } from "lucide-react";
+import { Brain, Users, AlertTriangle } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/i18n";
 
 const icons = {
-  card1: Settings2,
-  card2: Split,
-  card3: Bot,
+  card1: Brain,
+  card2: Users,
+  card3: AlertTriangle,
 };
 
-export function Services() {
+export function Problem() {
   const { lang } = useLanguage();
   const t = content[lang];
   const prefersReducedMotion = useReducedMotion();
 
-  const cards = [t.services.card1, t.services.card2, t.services.card3];
+  const cards = [t.problem.card1, t.problem.card2, t.problem.card3];
 
   const container = {
     hidden: {},
@@ -31,7 +31,7 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="py-20 px-6">
+    <section id="problem" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Badge */}
         <motion.div
@@ -41,8 +41,8 @@ export function Services() {
           transition={{ duration: 0.5 }}
           className="mb-4"
         >
-          <span className="text-xs uppercase tracking-widest text-accent-soft font-mono">
-            {t.services.badge}
+          <span className="text-xs uppercase tracking-widest text-warm-taupe font-mono">
+            {t.problem.badge}
           </span>
         </motion.div>
 
@@ -54,7 +54,7 @@ export function Services() {
           transition={{ duration: 0.5, delay: 0.05 }}
           className="text-3xl md:text-5xl font-semibold text-zinc-50 mb-16 tracking-tight"
         >
-          {t.services.title}
+          {t.problem.title}
         </motion.h2>
 
         {/* Cards */}
@@ -71,30 +71,25 @@ export function Services() {
               <motion.div
                 key={i}
                 variants={item}
-                className="group relative p-8 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
+                className="relative p-8 rounded-xl bg-zinc-900 border border-zinc-800"
+                style={{
+                  background: "linear-gradient(180deg, rgba(212, 196, 176, 0.03) 0%, transparent 100%)",
+                }}
               >
-                {/* Subtle top gradient */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
-
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <Icon className="w-6 h-6 text-accent-soft" />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-6">
+                  <Icon className="w-8 h-8 text-warm-taupe" strokeWidth={1.5} />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-zinc-100 mb-3 tracking-tight">
-                  {card.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-zinc-400 leading-relaxed mb-6">
-                  {card.description}
+                {/* Stat */}
+                <p className="text-4xl font-bold text-accent-soft mb-3 tracking-tight">
+                  {card.stat}
                 </p>
 
-                {/* Arrow - appears on hover */}
-                <div className="flex items-center text-zinc-600 group-hover:text-accent-soft group-hover:translate-x-1 transition-all duration-200">
-                  <ArrowRight className="w-4 h-4" />
-                </div>
+                {/* Description */}
+                <p className="text-zinc-400 leading-relaxed">
+                  {card.description}
+                </p>
               </motion.div>
             );
           })}

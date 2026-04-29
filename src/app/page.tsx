@@ -1,14 +1,15 @@
 "use client";
 
 import { LanguageProvider } from "@/lib/language-context";
-import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
-import { Services } from "@/components/Services";
-import { Who } from "@/components/Who";
+import { Navigation } from "@/components/navigation";
+import { Hero } from "@/components/hero";
+import { Problem } from "@/components/problem";
+import { Solution } from "@/components/solution";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Projects } from "@/components/Projects";
-import { CTA } from "@/components/CTA";
-import { Footer } from "@/components/Footer";
+import { Why } from "@/components/why";
+import { CTA } from "@/components/cta";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -16,10 +17,11 @@ export default function Home() {
       <main className="min-h-screen bg-zinc-950">
         <Navigation />
         <Hero />
-        <Services />
-        <Who />
+        <Problem />
+        <Solution />
         <HowItWorks />
         <Projects />
+        <Why />
         <CTA />
         <Footer />
       </main>

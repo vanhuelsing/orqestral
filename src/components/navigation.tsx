@@ -19,9 +19,9 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "#services", label: t.nav.services },
-    { href: "#who", label: t.nav.about },
-    { href: "#projects", label: "Projects" },
+    { href: "#problem", label: t.nav.services },
+    { href: "#why", label: t.nav.about },
+    { href: "#projects", label: "Traction" },
     { href: "#contact", label: t.nav.contact },
   ];
 

@@ -1,28 +1,22 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { GraduationCap, Mic, Sparkles } from "lucide-react";
+import { MessageCircle, Calendar, Sparkles, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/i18n";
 
 const icons = {
-  project1: GraduationCap,
-  project2: Mic,
-  project3: Sparkles,
+  card1: MessageCircle,
+  card2: Calendar,
+  card3: Sparkles,
 };
 
-const urls = {
-  project1: "https://agentlabs.academy",
-  project2: "https://heyfranz.ai",
-  project3: null,
-};
-
-export function Projects() {
+export function Solution() {
   const { lang } = useLanguage();
   const t = content[lang];
   const prefersReducedMotion = useReducedMotion();
 
-  const projects = [t.projects.project1, t.projects.project2, t.projects.project3];
+  const cards = [t.solution.card1, t.solution.card2, t.solution.card3];
 
   const container = {
     hidden: {},
@@ -37,7 +31,7 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 px-6 bg-zinc-900/30">
+    <section id="solution" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Badge */}
         <motion.div
@@ -48,7 +42,7 @@ export function Projects() {
           className="mb-4"
         >
           <span className="text-xs uppercase tracking-widest text-accent-soft font-mono">
-            {t.projects.badge}
+            {t.solution.badge}
           </span>
         </motion.div>
 
@@ -60,21 +54,21 @@ export function Projects() {
           transition={{ duration: 0.5, delay: 0.05 }}
           className="text-3xl md:text-5xl font-semibold text-zinc-50 mb-6 tracking-tight"
         >
-          {t.projects.title}
+          {t.solution.title}
         </motion.h2>
 
-        {/* Intro */}
+        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg text-zinc-400 mb-16 max-w-2xl leading-relaxed"
+          className="text-xl md:text-2xl text-warm-taupe font-medium mb-16"
         >
-          {t.projects.intro}
+          {t.solution.tagline}
         </motion.p>
 
-        {/* Project Cards */}
+        {/* Cards */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -82,20 +76,23 @@ export function Projects() {
           viewport={{ once: true }}
           className="grid md:grid-cols-3 gap-8"
         >
-          {projects.map((project, i) => {
+          {cards.map((card, i) => {
             const Icon = Object.values(icons)[i];
-            const url = Object.values(urls)[i];
-            const Wrapper = url ? "a" : "div";
-            const wrapperProps = url
-              ? { href: url, target: "_blank", rel: "noopener noreferrer" }
-              : {};
-
             return (
               <motion.div
                 key={i}
                 variants={item}
-                className="group block p-8 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
+                className="group relative p-8 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
               >
+                {/* Subtle top gradient */}
+                <div
+                  className="absolute inset-0 rounded-xl pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(212, 196, 176, 0.03) 0%, transparent 100%)",
+                  }}
+                />
+
                 {/* Icon */}
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
                   <Icon className="w-6 h-6 text-accent-soft" strokeWidth={1.5} />
@@ -103,17 +100,17 @@ export function Projects() {
 
                 {/* Title */}
                 <h3 className="text-xl font-semibold text-zinc-100 mb-3 tracking-tight">
-                  {project.title}
+                  {card.title}
                 </h3>
 
                 {/* Description */}
                 <p className="text-zinc-400 leading-relaxed mb-6">
-                  {project.description}
+                  {card.description}
                 </p>
 
-                {/* Metric */}
-                <div className="flex items-center gap-2 text-sm text-warm-taupe font-medium">
-                  <span>{project.metric}</span>
+                {/* Arrow - appears on hover */}
+                <div className="flex items-center text-zinc-600 group-hover:text-accent-soft group-hover:translate-x-1 transition-all duration-200">
+                  <ArrowRight className="w-4 h-4" />
                 </div>
               </motion.div>
             );

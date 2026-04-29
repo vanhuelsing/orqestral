@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/i18n";
 
@@ -9,7 +10,7 @@ export function HowItWorks() {
   const t = content[lang];
   const prefersReducedMotion = useReducedMotion();
 
-  const steps = [t.process.step1, t.process.step2, t.process.step3];
+  const steps = [t.how.step1, t.how.step2, t.how.step3];
 
   const container = {
     hidden: {},
@@ -24,7 +25,7 @@ export function HowItWorks() {
   };
 
   return (
-    <section id="process" className="py-20 px-6">
+    <section id="how" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Badge */}
         <motion.div
@@ -35,7 +36,7 @@ export function HowItWorks() {
           className="mb-4"
         >
           <span className="text-xs uppercase tracking-widest text-accent-soft font-mono">
-            {t.process.badge}
+            {t.how.badge}
           </span>
         </motion.div>
 
@@ -45,10 +46,21 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="text-3xl md:text-5xl font-semibold text-zinc-50 mb-16 tracking-tight"
+          className="text-3xl md:text-5xl font-semibold text-zinc-50 mb-6 tracking-tight"
         >
-          {t.process.title}
+          {t.how.title}
         </motion.h2>
+
+        {/* Intro line */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-lg text-zinc-400 mb-16 max-w-2xl leading-relaxed"
+        >
+          {t.how.intro}
+        </motion.p>
 
         {/* Steps */}
         <motion.div
@@ -60,9 +72,11 @@ export function HowItWorks() {
         >
           {steps.map((step, i) => (
             <motion.div key={step.number} variants={item} className="relative">
-              {/* Connector line between cards (desktop only) */}
+              {/* Connector arrow between cards (desktop only) */}
               {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-6 right-0 w-8 h-px bg-zinc-700" />
+                <div className="hidden md:flex absolute top-6 -right-4 z-10 items-center justify-center w-8">
+                  <ArrowRight className="w-4 h-4 text-zinc-600" />
+                </div>
               )}
 
               <div className="flex md:flex-col gap-4 md:gap-0">
